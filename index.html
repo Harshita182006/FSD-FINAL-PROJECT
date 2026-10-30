@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In · AI Resume Analyzer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+</head>
+<body class="auth-body">
+
+    <div class="auth-wrapper">
+        <!-- Left: Brand panel -->
+        <div class="auth-brand">
+            <div class="brand-inner">
+                <div class="flex items-center gap-3 mb-6">
+                    <i class="fas fa-file-alt text-white text-3xl"></i>
+                    <h1 class="text-2xl font-semibold text-white">AI Resume <span class="text-teal-300">Analyzer</span></h1>
+                </div>
+                <p class="text-teal-50 text-sm leading-relaxed mb-8">
+                    Score, rank, and shortlist resumes against any job description in seconds.
+                    Powered by semantic similarity and skill-matching NLP.
+                </p>
+                <ul class="auth-feature-list">
+                    <li><i class="fas fa-check-circle"></i> Semantic matching against any JD</li>
+                    <li><i class="fas fa-check-circle"></i> Automatic skill-gap detection</li>
+                    <li><i class="fas fa-check-circle"></i> Ranked leaderboard with visuals</li>
+                    <li><i class="fas fa-check-circle"></i> 100% local — no data leaves your browser</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Right: Auth form -->
+        <div class="auth-form-panel">
+            <div class="auth-form-card">
+
+                <!-- Tabs -->
+                <div class="auth-tabs">
+                    <button id="tabLogin"  class="auth-tab active">Sign In</button>
+                    <button id="tabSignup" class="auth-tab">Sign Up</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="loginForm" class="auth-form" autocomplete="off">
+                    <h2 class="auth-heading">Welcome back</h2>
+                    <p class="auth-subheading">Sign in to access your recruiter dashboard.</p>
+
+                    <div class="auth-field">
+                        <label for="loginUsername">Username</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="loginUsername" placeholder="Enter your username" required>
+                        </div>
+                    </div>
+
+                    <div class="auth-field">
+                        <label for="loginPassword">Password</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                            <button type="button" class="toggle-pass" data-target="loginPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="auth-error hidden" id="loginError"></div>
+
+                    <button type="submit" class="auth-submit">
+                        <i class="fas fa-sign-in-alt mr-2"></i> Sign In
+                    </button>
+
+                    <p class="auth-switch">
+                        Don't have an account?
+                        <button type="button" class="link-inline" data-switch="signup">Create one</button>
+                    </p>
+                </form>
+
+                <!-- Signup Form -->
+                <form id="signupForm" class="auth-form hidden" autocomplete="off">
+                    <h2 class="auth-heading">Create an account</h2>
+                    <p class="auth-subheading">Set up your local recruiter profile.</p>
+
+                    <div class="auth-field">
+                        <label for="signupUsername">Username</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="signupUsername" placeholder="Choose a username (min 3 chars)" required>
+                        </div>
+                    </div>
+
+                    <div class="auth-field">
+                        <label for="signupPassword">Password</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="signupPassword" placeholder="Min 6 characters" required>
+                            <button type="button" class="toggle-pass" data-target="signupPassword">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="auth-field">
+                        <label for="signupConfirm">Confirm Password</label>
+                        <div class="input-wrap">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="signupConfirm" placeholder="Repeat your password" required>
+                            <button type="button" class="toggle-pass" data-target="signupConfirm">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="auth-error hidden" id="signupError"></div>
+                    <div class="auth-success hidden" id="signupSuccess"></div>
+
+                    <button type="submit" class="auth-submit">
+                        <i class="fas fa-user-plus mr-2"></i> Create Account
+                    </button>
+
+                    <p class="auth-switch">
+                        Already have an account?
+                        <button type="button" class="link-inline" data-switch="login">Sign in</button>
+                    </p>
+                </form>
+
+                <p class="auth-footnote">
+                    <i class="fas fa-shield-alt mr-1"></i>
+                    Local demo — accounts are stored in your browser only.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+</body>
+</html>
